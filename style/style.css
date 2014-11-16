@@ -9,6 +9,15 @@ font-weight: bold;
 font-size: 100%;
 color: white;
 }
+h1{
+margin:auto;
+max-width:100%;
+text-align:center;
+}
+#mySelect-button
+{
+float:right;
+}
 
 body
 {
@@ -104,9 +113,10 @@ body
 	 display: block;
      /*width: 400px;*/
 	  margin:auto;
-	  float:left;
+	  /* float:left;
 	  width:75px;
-    height:75px;
+    height:75px; */
+	float:left;
 }
 input
 {

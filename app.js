@@ -2,7 +2,6 @@
 
 $(document).on('pageinit',function() {
 	
-	
 	$("#fetch").click(function(){
 		var searchInput = $("#the-search-input").val();
 		
@@ -15,6 +14,8 @@ $(document).on('pageinit',function() {
 			loadWeatherWebService(searchInput);
 		
 			}
+			
+			
 		
 	});
 
@@ -59,13 +60,12 @@ function loadWeatherWebService(location)
         var date = newdate.getDate();
 		var formatteddate = weekday[newdate.getDay()] + ' ' + date + ' ' + month + ', ' + year;
 		var icon = result.weather[0].icon;
-		
-		htmlString = htmlString + "<div id='location'>"+city +", "+ country+"</div>";
-		htmlString = htmlString + "<div class='weatherData'> <b>"+ formatteddate + " : "+ result.weather[0].main +"  <img src=weather-icons/"+icon+".png /></div>";
+		htmlString = htmlString + "<div id='location'>"+city +", "+ country+"<a href=audio.html target=_blank ><img src=weather-icons/music.png alt=HTMLtutorial ></a></div>";
+		//htmlString = htmlString + "<div id='location'>"+city +", "+ country+" <img id="audioicon" src=weather-icons/music.png alt="audiologo"></div>";
+		htmlString = htmlString + "<div class='dayHeader'> <b>"+ formatteddate + " : "+ result.weather[0].main +"  <img src=weather-icons/"+icon+".png /></div>";
 		htmlString = htmlString + "<div class='weatherData'> <b> Temperature: Curr "+temp  + " <sup>o</sup>C , Max "+  Math.round(result.main.temp_max) + " <sup>o</sup>C , Min "+  Math.round(result.main.temp_min) + " <sup>o</sup>C </div>";
 		htmlString = htmlString + "<div class='weatherData'> <b> Sunrise: "+ sunriseFormattedTime+" AM , Sunset: "+ sunsetFormattedTime+" PM</div>";
 		htmlString = htmlString + "<div class='weatherData'> <b> Description: "+description.substring(0,1).toUpperCase() + description.substring(1)+" , Humidity: "+ humidity + " </div>";
-		
 		
 		myurl="fiveday.html?city=" + city + "&country=" + country;
 		htmlString = htmlString + "<div class='fiveweatherData'> Do you want <a target=_fiveday_ href=" + myurl + "> 5 days weather</a> information? </div>";

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>Media Example</title>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>	
+<link rel="stylesheet" href="jquery.mobile-1.4.4.min.css" />
+		<script src="phonegap.js"></script>
+		<script src="jquery-1.8.1.min.js"></script>
+		<script src="jquery.mobile-1.2.0.min.js"></script>
+		<script src="audio.js"></script>   
+
+      </head>
+      <body>
+        <a href="#" class="btn large" onclick="playAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play Audio</a>
+        <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
+        <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
+        <p id="audio_position"></p>
+      </body>
+    </html>

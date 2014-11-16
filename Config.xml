@@ -12,4 +12,5 @@ weather app
 Priya
 </author>
 <icon src="icon.png" />
+<gap:plugin name="org.apache.cordova.media" />
 </widget>
