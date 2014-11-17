@@ -60,7 +60,7 @@ function loadWeatherWebService(location)
         var date = newdate.getDate();
 		var formatteddate = weekday[newdate.getDay()] + ' ' + date + ' ' + month + ', ' + year;
 		var icon = result.weather[0].icon;
-		htmlString = htmlString + "<div id='location'>"+city +", "+ country+"<a href=audio.html target=_blank ><img src=weather-icons/music.png alt=HTMLtutorial ></a></div>";
+		htmlString = htmlString + "<div id='location'>"+city +", "+ country+"<a href=media.html target=_blank ><img src=weather-icons/music.png alt=HTMLtutorial ></a></div>";
 		//htmlString = htmlString + "<div id='location'>"+city +", "+ country+" <img id="audioicon" src=weather-icons/music.png alt="audiologo"></div>";
 		htmlString = htmlString + "<div class='dayHeader'> <b>"+ formatteddate + " : "+ result.weather[0].main +"  <img src=weather-icons/"+icon+".png /></div>";
 		htmlString = htmlString + "<div class='weatherData'> <b> Temperature: Curr "+temp  + " <sup>o</sup>C , Max "+  Math.round(result.main.temp_max) + " <sup>o</sup>C , Min "+  Math.round(result.main.temp_min) + " <sup>o</sup>C </div>";
