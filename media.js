@@ -26,6 +26,7 @@ function setAudioPosition(position) {
     $("#audio_position").html(position + " sec");
 }
 function onSuccess() {
+alert("Play success");
     setAudioPosition(dur);
     clearInterval(mediaTimer);
     mediaTimer = null;
@@ -43,12 +44,14 @@ function onError(error) {
     setAudioPosition("0");
 }
 function playAudio(src) {
+alert("Inside PlayAudio");
     if (my_media === null) {       
         $("#media_dur").html("0"); // ui niceties
         $("#audio_position").html("Loading...");        
         // Create Media object from src
         my_media = new Media(src, onSuccess, onError);       
         //alert('Playing Audio');
+		alert("Created media");
         my_media.play();
     } else {
         if (is_paused) {
@@ -157,7 +160,7 @@ function startRecord() {
 
 $(document).ready(function() {       
     $("#playaudio").live('tap', function() {
-	alert("inside play audio");
+	
         check_network();
         if ($('#connection').html() === 'No network connection') {
             alert("Need network connection to play song from internet");
