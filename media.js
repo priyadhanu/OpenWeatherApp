@@ -157,6 +157,7 @@ function startRecord() {
 
 $(document).ready(function() {       
     $("#playaudio").live('tap', function() {
+	alert("inside play audio");
         check_network();
         if ($('#connection').html() === 'No network connection') {
             alert("Need network connection to play song from internet");
