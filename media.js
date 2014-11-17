@@ -161,16 +161,21 @@ function startRecord() {
 $(document).ready(function() {       
     $("#playaudio").live('tap', function() {
 	
-        check_network();
+        /*check_network();
         if ($('#connection').html() === 'No network connection') {
             alert("Need network connection to play song from internet");
             return false;
         }
+		else {
+			alert("Network connection exists");
+		}
         // Note: Two ways to access media file: (1) web (below)        
         var src = 'http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3';        
         // (2) local (on device): copy file to project's /assets folder, acces with:
         // var src = '/android_asset/yourthemesong.m4a'; 
-        
+        */
+		var src = 'weather-icons/a.mp3';
+		alert(src);
         playAudio(src);
     });
     $("#pauseaudio").live('tap', function() {
