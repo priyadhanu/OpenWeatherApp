@@ -174,7 +174,7 @@ $(document).ready(function() {
         // (2) local (on device): copy file to project's /assets folder, acces with:
         // var src = '/android_asset/yourthemesong.m4a'; 
         */
-		var src = 'weather-icons/a.mp3';
+		var src = '/android_asset/www/weather-icons/a.mp3';
 		alert(src);
         playAudio(src);
     });
