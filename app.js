@@ -3,6 +3,7 @@
 $(document).on('pageinit',function() {
 	
 	$("#fetch").click(function(){
+	document.addEventListener("deviceready", onDeviceReady, false);
 		var searchInput = $("#the-search-input").val();
 		
 		if(searchInput=="")
@@ -21,6 +22,25 @@ $(document).on('pageinit',function() {
 
 });
 
+function onDeviceReady() {
+    playAudio();
+}
+
+function playAudio() {
+    // Play the audio file at url
+    var my_media = new Media('/android_asset/www/testaudio.mp3',
+        // success callback
+        function () {
+            console.log("playAudio():Audio Success");
+        },
+        // error callback
+        function (err) {
+            console.log("playAudio():Audio Error: " + err);
+        }
+    );
+    // Play audio
+    my_media.play();
+}
 
 function loadWeatherWebService(location)
 {
@@ -60,7 +80,8 @@ function loadWeatherWebService(location)
         var date = newdate.getDate();
 		var formatteddate = weekday[newdate.getDay()] + ' ' + date + ' ' + month + ', ' + year;
 		var icon = result.weather[0].icon;
-		htmlString = htmlString + "<div id='location'>"+city +", "+ country+"<a href=media.html target=_blank ><img src=weather-icons/music.png alt=HTMLtutorial ></a></div>";
+		htmlString = htmlString + "<div id='location'>"+city +", "+ country+"</div>";
+		//htmlString = htmlString + "<div id='location'>"+city +", "+ country+"<a href=media.html target=_blank ><img src=weather-icons/music.png alt=HTMLtutorial ></a></div>";
 		//htmlString = htmlString + "<div id='location'>"+city +", "+ country+" <img id="audioicon" src=weather-icons/music.png alt="audiologo"></div>";
 		htmlString = htmlString + "<div class='dayHeader'> <b>"+ formatteddate + " : "+ result.weather[0].main +"  <img src=weather-icons/"+icon+".png /></div>";
 		htmlString = htmlString + "<div class='weatherData'> <b> Temperature: Curr "+temp  + " <sup>o</sup>C , Max "+  Math.round(result.main.temp_max) + " <sup>o</sup>C , Min "+  Math.round(result.main.temp_min) + " <sup>o</sup>C </div>";
