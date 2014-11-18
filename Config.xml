@@ -13,4 +13,6 @@ Priya
 </author>
 <icon src="metropoliaimage.jpg" />
 <gap:plugin name="org.apache.cordova.AudioHandler" />
+<gap:plugin name="org.apache.cordova.file" />
+<gap:plugin name="org.apache.cordova.media" />
 </widget>
